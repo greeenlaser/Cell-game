@@ -24,6 +24,6 @@ public class PlayerCombat : MonoBehaviour
     void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        Debug.Log("Current Health = " + currentHealth)
+        Debug.Log("Current Health = " + currentHealth);
     }
 }
