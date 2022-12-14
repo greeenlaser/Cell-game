@@ -4,17 +4,24 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    Rigidbody rb;
-    public float speed;
+    [Header("Assignables")]
+    [SerializeField] private float speed;
 
-    void Start()
+    //private variables
+    private Rigidbody rb;
+
+    private void Awake()
     {
         rb = GetComponent<Rigidbody>();
     }
-    void FixedUpdate()
+
+    private void FixedUpdate()
     {
-        float mH = Input.GetAxis("Horizontal");
-        float mV = Input.GetAxis("Vertical");
-        rb.velocity = new Vector3(mH * speed, rb.velocity.y, mV * speed);
+        if (GetComponent<PlayerCombat>().currentHealth > 0)
+        {
+            float mH = Input.GetAxis("Horizontal");
+            float mV = Input.GetAxis("Vertical");
+            rb.velocity = new Vector3(mH * speed, rb.velocity.y, mV * speed);
+        }
     }
 }
