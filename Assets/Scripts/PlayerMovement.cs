@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [Header("Assignables")]
     [SerializeField] private float speed;
 
     //private variables
