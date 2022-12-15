@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class PlayerCombat : MonoBehaviour
 {
-    [Header("Health bar UI")]
     [SerializeField] private RawImage heart1, heart2, heart3;
     [SerializeField] private Texture emptyHeart, halfHeart, fullHeart;
 
@@ -18,6 +17,7 @@ public class PlayerCombat : MonoBehaviour
     private void Awake()
     {
         currentHealth = maxHealth;
+        UpdateHealthBar();
     }
 
     private void Update()
